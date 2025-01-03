@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import TravelPackage
 
 def home(request):
-    packages = TravelPackage.objects.all()
+    packages = TravelPackage.objects.all().order_by('-id')
     return render(request, 'travel_packages/home.html', {'packages': packages})
 
 def black_friday(request):
