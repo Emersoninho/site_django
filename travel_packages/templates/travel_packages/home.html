@@ -1,11 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>HOME</h1>
-</body>
-</html>
+{% extends 'travel_packages/base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h4>Pacotes de Viagens</h4>
+    </div>
+        <div class="row">
+            {% for package in packages %}
+                <div class="col-md-4 mb-4">
+                    <div class="card mb-4 shadow">
+                        {% if package.image %}
+                        <img src="{{ package.image.url }}" class="card-img-top" alt="{{ package.name }}">
+                        {% endif %}
+                        <div class="card-body text-center">
+                            <h5 class="card-title">{{ package.name }}</h5>
+                            <p class="card-text">
+                                <span class="text-muted"><del><small>R$ {{ package.original_price }}</small></del></span>
+                                <span class="text-success">R$ {{ package.discounted_price }}</span>
+                            </p>
+                            <a href="#" class="btn btn-primary btn-sm">Mais Detalhes</a>    
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}    
+        </div>
+  
+{% endblock content %}
+

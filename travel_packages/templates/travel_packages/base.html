@@ -1,14 +1,44 @@
 {% load bootstrap5 %}
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% bootstrap_css %}
     <title>Site de Viagens</title>
 </head>
-<body>
-    <h1>HOME</h1>
+<body class="d-flex flex-column h-100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+          <a class="navbar-brand" href="#">Site de Viagens</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Black Friday</a>
+              </li>
+            </ul>
+            <div class="col-md-3 text-end">
+                <a href="{% url "admin:index" %}" class="btn btn-outline-light me-2" target="_blank">Login</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    
+    {% block content %}{% endblock content %}
+
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container text-center">
+            <span class="text-muted">Copyright &copy; Site de Viagens {% now "Y" %}</span>
+        </div>
+    </footer>
+
     {% bootstrap_javascript %}
 </body>
 </html>
