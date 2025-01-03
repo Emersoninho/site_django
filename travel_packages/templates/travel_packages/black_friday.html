@@ -7,7 +7,7 @@
         <div class="row">
             {% for package in packages %}
                 <div class="col-md-4 mb-4">
-                    <div class="card mb-4 shadow">
+                    <div class="card mb-4 shadow border-light">
                         {% if package.image %}
                         <img src="{{ package.image.url }}" class="card-img-top" alt="{{ package.name }}">
                         {% endif %}

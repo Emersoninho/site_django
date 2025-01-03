@@ -2,12 +2,16 @@
 
 {% block content %}
     <div class="container mt-5">
-        <h4>Pacotes de Viagens</h4>
+        <div class="mb-2 pt-1 pb-4 list-travel-package">
+            <div class="barra-title-list-travel-package"></div>
+            <h4 class="title-list-travel-package">Pacotes de Viagens</h4>
+        </div>
+        
     </div>
         <div class="row">
             {% for package in packages %}
                 <div class="col-md-4 mb-4">
-                    <div class="card mb-4 shadow">
+                    <div class="card mb-4 shadow border-light">
                         {% if package.image %}
                         <img src="{{ package.image.url }}" class="card-img-top" alt="{{ package.name }}">
                         {% endif %}
