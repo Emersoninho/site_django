@@ -17,7 +17,7 @@
                                 <span class="text-muted"><del><small>R$ {{ package.original_price }}</small></del></span>
                                 <span class="text-success">R$ {{ package.discounted_price }}</span>
                             </p>
-                            <a href="#" class="btn btn-primary btn-sm">Mais Detalhes</a>    
+                            <a href="{% url "package_detail" id=package.id %}" class="btn btn-primary btn-sm">Mais Detalhes</a>    
                         </div>
                     </div>
                 </div>
